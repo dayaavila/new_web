@@ -1,0 +1,72 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box; /*asegura q el relleno y borden estan incluidos en ancho y alto de los elemento.*/
+}
+[class*="col-"]
+{
+    float: left;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.contenedor
+{
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+.fila
+{
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    /*Las columnas dentro de las filas estan flotando a la izq,y por lo tanto se toman fuera del flujo de la pag,
+     y otros elementos sreán colocados como si fueran de las columnas. Para evitar esto, añadimos un estilo que despeja el flujo*/
+    clear: both;/*permite que se respete el area entre filas creado por el float*/
+    display: table; /*permite que se respete el area dejado por la fila superior haciendo haciendo que baje a la siguiente fila*/
+    /*el display teble se entiende mejor al colocar un background a la fila, por que las tablas flotantes no estan sumando altura */
+}
+/* col- son las columnas y siempre por buena practica 12 columns que dividan en partes iguales la pantalla.*/
+/*el total de las columnas es 12, para las demas 11 columnas debemos hacer la regla de 3: n*100/12*/
+/*1 columnas del 100% de la pantalla*/
+.col-12{width: 100%;}
+
+/*para 11 columnas= 11*100/12= 91.66666666 */
+.col-11{width: 91.66666666%;}
+
+/*para 10 columnas= 10*100/12=83.33333333 */
+.col-10{width: 83.33333333%;}
+
+/*de las 12 columnas quiero ocupar el 75% = 12/4=3 se hace la regla de 3 para saber el tamaño= (9*100/12= 75) */
+.col-9{width: 75%;}
+
+/*para 8 columnas= 8*100/12= */
+.col-8{width: 66.66666667%;}
+
+/*para 7 columnas= 7*100/12=58.33333333 */
+.col-7{width: 58.33333333%;}
+
+/* para 6 columnas y para 2 cajas= 12/2=6 */
+.col-6{width: 50%;}
+
+/*para 5 columnas= 5*100/12= 41.66666667*/
+.col-5{width: 41.66666667%;}
+
+/* 4 columnas para 3 cajas= 12/3=4, se hace la regla de 3 para saber el porcentaje de tamaño = (12=100, 4=?) 
+= (4*100/12=33.33333333) bustra recomienda dejar 8 decimales*/
+.col-4{width: 33.33333333%;}
+
+/*3 columnas cubriendo el 100%, para 4 cajas = 12/4=3 se hace la regla de 3 para saber el tamaño= (3*100/12= 25) */
+.col-3{width: 25%;}
+
+/* 2 columnas para 1 caja = 2*100/12= */
+.col-2{width: 16.6666667%;}
+
+/* 1 columnas para 1 caja = 1*100/12= */
+.col-1{width: 8.33333333%;}
